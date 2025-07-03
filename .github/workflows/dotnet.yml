@@ -1,0 +1,26 @@
+name: TestProject1 WorkFlow
+
+on:
+  push:  # Runs on every push (since you only have one branch)
+
+jobs:
+  test:
+    name: Test .NET 9 App
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4  # Check out your code
+    
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'  # Uses the latest .NET 9 SDK
+    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    
+    - name: Run Tests
+      run: dotnet test --configuration Release --no-build --verbosity normal
