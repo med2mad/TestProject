@@ -1,0 +1,50 @@
+# .NET build & runtime artifacts
+bin/
+obj/
+.vs/
+artifacts/
+TestResults/
+*.user
+*.suo
+*.cache
+*.swp
+
+# NuGet packages
+.nuget/
+*.nupkg
+packages/
+
+# IDE & editor files (VS, VS Code, Rider)
+.idea/
+.vscode/
+*.sln.iml
+*.csproj.user
+launchSettings.json
+
+# Build logs & temp files
+msbuild.log
+*.log
+*.binlog
+
+# Code coverage & test results
+coverage/
+*.coverage
+*.coverage.xml
+
+# Local development configs (secrets, local settings)
+appsettings.Development.json
+appsettings.Local.json
+*.secrets.json
+*.env
+/local.settings.json
+
+# Azure Functions & Docker (if applicable)
+func-artifacts/
+.dockerignore
+**/.docker/
+**/docker-compose*.yml
+
+# macOS & Linux temp files
+.DS_Store
+*~
+Thumbs.db
